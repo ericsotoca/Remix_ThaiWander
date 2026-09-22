@@ -1,8 +1,8 @@
 import { ItineraryItem, TripSettings } from './types';
 
 export const DEFAULT_TRIP_SETTINGS: TripSettings = {
-  title: "Road Trip Camping & Nature - 4 Provinces",
-  description: "Un road trip nature exceptionnel à la découverte des parcs nationaux, des chutes d'eau et des montagnes sauvages de Kanchanaburi, Ratchaburi, Saraburi et Nakhon Nayok.",
+  title: "โรดทริปแคมป์ปิ้งและธรรมชาติ - 4 จังหวัด",
+  description: "สัมผัสประสบการณ์โรดทริปท่องเที่ยวธรรมชาติอันแสนพิเศษ ค้นพบอุทยานแห่งชาติ น้ำตกมรกต และหุบเขาสลับซับซ้อนในจังหวัดกาญจนบุรี ราชบุรี สระบุรี และนครนายก",
   startDate: "2026-11-01" // November 1st, 2026 (dry/cool season, perfect for camping!)
 };
 
@@ -31,98 +31,98 @@ export const DEFAULT_ITINERARY: ItineraryItem[] = [
     placeName: "123/99 Sarintara 1 Village, Samut Sakhon",
     day: 1,
     category: "Lodging",
-    notes: "Logement chez l'habitant (Gratuit) - Départ du road trip",
+    notes: "จุดเริ่มต้นเดินทาง - ที่พักโฮมสเตย์ฟรีและเช็คอุปกรณ์เตรียมตัว",
     lat: 13.5266,
     lng: 100.3161,
-    duration: "1 nuit",
+    duration: "1 คืน",
     budget: 0,
     imageUrl: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=600&q=80",
-    detailedTips: "Logement chez l'habitant gratuit. Adresse exacte : 123/99 Sarintara 1 Village, Khok Kham Subdistrict, Mueang Samut Sakhon District, Samut Sakhon 74000. Préparez vos bagages et votre équipement de camping. Assurez-vous d'avoir acheté vos cartouches de gaz à vis chez Decathlon avant de quitter les environs de Bangkok.",
-    maxInfo: "Un accueil chaleureux et gratuit chez l'habitant. Idéal pour commencer le road trip en toute sérénité."
+    detailedTips: "ที่พักฟรีเป็นกันเองในสมุทรสาคร แนะนำให้พกอุปกรณ์และจัดกระเป๋าเตรียมพร้อม และห้ามลืมซื้อแก๊สกระป๋องที่ Decathlon ก่อนออกเดินทาง",
+    maxInfo: "ที่พักฟรีโฮมสเตย์แสนอบอุ่นในสมุทรสาคร เหมาะสำหรับการเตรียมพร้อมสำหรับเริ่มต้นทริปแสนสนุก"
   },
   {
     id: "item-2",
     placeName: "Suan Phueng (Ratchaburi)",
     day: 2,
     category: "Camping",
-    notes: "Bivouac au frais dans les vallées de Ratchaburi",
+    notes: "กางเต็นท์รับลมหนาวในอ้อมกอดภูเขาและธรรมชาติ สวนผึ้ง",
     lat: 13.5414,
     lng: 99.3414,
-    duration: "2 nuits",
+    duration: "2 คืน",
     budget: 300,
     imageUrl: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=600&q=80",
-    detailedTips: "Installez votre campement face aux montagnes de la chaîne de Tenasserim. Le soir, les températures peuvent baisser de manière surprenante, vous offrant une brise très agréable.",
-    maxInfo: "Suan Phueng est le paradis vert de la province de Ratchaburi, renommé pour ses fermes d'inspiration européenne, ses ruisseaux cristallins et ses collines brumeuses."
+    detailedTips: "กางเต็นท์หญ้านุ่มรับลมจากเทือกเขาตะนาวศรี อากาศยามค่ำคืนค่อนข้างเย็นสบายและเงียบสงบยิ่ง",
+    maxInfo: "อำเภอสวนผึ้ง จังหวัดราชบุรี เป็นแหล่งท่องเที่ยวธรรมชาติยอดนิยม มีธารน้ำร้อน ฟาร์มแกะสไตล์ยุโรป และป่าเขาอุดมสมบูรณ์"
   },
   {
     id: "item-3",
     placeName: "Erawan National Park",
     day: 5,
     category: "Camping",
-    notes: "Camping au bord du légendaire cours d'eau aux sept niveaux turquoise",
+    notes: "กางเต็นท์ริมน้ำตกเอราวัณ 7 ชั้นอันลือชื่อ",
     lat: 14.3686,
     lng: 99.1436,
-    duration: "3 nuits",
+    duration: "3 คืน",
     budget: 300,
     imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80",
-    detailedTips: "Commencez la randonnée tôt à 8h00 pour visiter les niveaux supérieurs (jusqu'au niveau 7) en toute tranquillité avant l'arrivée du public. Les poissons s'amuseront à vous grignoter les pieds, c'est un peeling naturel très amusant !",
-    maxInfo: "L'une des cascades les plus emblématiques de Thaïlande. Son eau calcaire bleu turquoise forme de superbes bassins naturels parfaits pour la baignade."
+    detailedTips: "เริ่มเดินขึ้นชมชั้น 7 แต่เช้าตรู่ประมาณ 8.00 น. เพื่อหลีกเลี่ยงฝูงชน และสัมผัสกิจกรรมฟิชสปาธรรมชาติที่ปลาจะคอยตอดเท้าให้รู้สึกผ่อนคลาย",
+    maxInfo: "สุดยอดอุทยานแห่งชาติน้ำตกหินปูนสีมรกตใสสะอาด มีแอ่งน้ำสีฟ้าเทอร์ควอยซ์สวยงามให้ลงเล่นน้ำได้อย่างเต็มอิ่ม"
   },
   {
     id: "item-4",
     placeName: "Srinakarin Dam",
     day: 8,
     category: "Camping",
-    notes: "Bivouac panoramique au bord de la grande retenue d'eau",
+    notes: "กางเต็นท์สัมผัสทัศนียภาพอ่างเก็บน้ำเขื่อนอันกว้างขวาง",
     lat: 14.5000,
     lng: 99.0000,
-    duration: "2 nuits",
+    duration: "2 คืน",
     budget: 150,
     imageUrl: "https://images.unsplash.com/photo-1508873535684-277a3cbcc4e8?auto=format&fit=crop&w=600&q=80",
-    detailedTips: "Préférez le camping à la cascade Huay Mae Khamin (située près de la retenue), réputée pour sa beauté sauvage préservée et son accès direct au lac.",
-    maxInfo: "Le barrage de Srinakarin forme un réservoir grandiose, parfait pour les activités de kayak, les nuitées en cabanes flottantes ou le bivouac sauvage sous les étoiles."
+    detailedTips: "แนะนำจุดกางเต็นท์ที่น้ำตกห้วยแม่ขมิ้นชั้น 4 ซึ่งขึ้นชื่อเรื่องลานหญ้าที่สวยงามที่สุดและมองเห็นวิวอ่างเก็บน้ำเขื่อนศรีนครินทร์ทอแสงอาทิตย์สีทอง",
+    maxInfo: "เขื่อนอเนกประสงค์ขนาดใหญ่ โอบล้อมด้วยแนวเขาสลับซับซ้อน เหมาะแก่การพักผ่อน นั่งแพเปียก หรือพายเรือคายัคดูดาว"
   },
   {
     id: "item-5",
     placeName: "Namtok Chet Sao Noi (Saraburi)",
     day: 10,
     category: "Camping",
-    notes: "Camping tranquille au chant des cascades de Saraburi",
+    notes: "กางเต็นท์พักผ่อนริมลำธารเจ็ดสาวน้อย ฟังเสียงน้ำไหลเอื่อย",
     lat: 14.7300,
     lng: 101.1917,
-    duration: "2 nuits",
+    duration: "2 คืน",
     budget: 200,
     imageUrl: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=600&q=80",
-    detailedTips: "Dégustez d'excellents poulets grillés locaux achetés près de l'entrée du parc. Le camping au bord de la rivière est calme et très bien aménagé par l'équipe du parc national.",
-    maxInfo: "Chet Sao Noi (la cascade des sept jeunes filles) propose 7 paliers d'eau claire peu profonds, idéaux pour se rafraîchir en toute sécurité."
+    detailedTips: "ลิ้มลองส้มตำไก่ย่างรสแซ่บหน้าทางเข้าอุทยาน ลานกางเต็นท์มีหญ้านุ่มและสิ่งอำนวยความสะดวกครบครัน ปลอดภัยมาก",
+    maxInfo: "น้ำตกหินปูนชั้นเตี้ยๆ 7 ชั้นที่มีน้ำไหลเย็นตลอดทั้งปี ปลอดภัยเหมาะสำหรับการลงแช่น้ำผ่อนคลายความเหนื่อยล้า"
   },
   {
     id: "item-6",
     placeName: "Khun Dan Prakan Chon Dam (Nakhon Nayok)",
     day: 12,
     category: "Camping",
-    notes: "Bivouac face au plus long barrage en béton du monde",
+    notes: "กางเต็นท์ริมอ่างเก็บน้ำเขื่อนขุนด่าน ชมวิวขุนเขาพาดสายหมอก",
     lat: 14.3128,
     lng: 101.3217,
-    duration: "2 nuits",
+    duration: "2 คืน",
     budget: 200,
     imageUrl: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80",
-    detailedTips: "Louez un bateau à longue queue traditionnel à l'aube pour naviguer sur le lac de retenue et visiter les cascades cachées à l'arrière du barrage, une pure merveille !",
-    maxInfo: "Ce barrage monumental retient l'eau venant du parc national de Khao Yai, offrant des panoramas splendides sur les plaines de Nakhon Nayok."
+    detailedTips: "ตื่นเช้าเพื่อล่องเรือหางยาวเข้าไปชม 3 น้ำตกลับหลังเขื่อน ได้แก่ น้ำตกช่องลม น้ำตกคลองคราม และน้ำตกผางามงอน สวยงามราวสรวงสวรรค์",
+    maxInfo: "เขื่อนคอนกรีตบดอัดที่ยาวที่สุดในโลก ทำหน้าที่กักเก็บน้ำสะอาดจากผืนป่าเขาใหญ่ โดดเด่นด้วยทิวทัศน์หุบเขาลับด้านหลังเขื่อน"
   },
   {
     id: "item-7",
     placeName: "Bangkok",
     day: 14,
     category: "Lodging",
-    notes: "Fin de l'aventure, retour dans la vibrante capitale",
+    notes: "เดินทางกลับกรุงเทพฯ คืนรถเช่า และนวดแผนไทยคลายเมื่อยล้า",
     lat: 13.7563,
     lng: 100.5018,
-    duration: "1 nuit",
+    duration: "1 คืน",
     budget: 800,
     imageUrl: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=600&q=80",
-    detailedTips: "Profitez-en pour restituer votre matériel de location de voiture, vous détendre avec un massage thaï traditionnel bien mérité après des kilomètres de route, et savourer d'excellents plats de street food.",
-    maxInfo: "Fin de votre inoubliable road trip de 2 semaines à travers les joyaux sauvages de Kanchanaburi, Ratchaburi, Saraburi et Nakhon Nayok."
+    detailedTips: "แวะคืนรถเช่าและคืนอุปกรณ์ เดินเล่นทานสตรีทฟู้ดแสนอร่อยย่านเยาวราชหรือตลาดกลางคืนเพื่อจบทริปแสนประทับใจ",
+    maxInfo: "ปิดฉากโรดทริป 2 สัปดาห์แสนวิเศษใน 4 จังหวัดธรรมชาติรอบกรุงเทพมหานคร ได้รับทั้งความสุขและความทรงจำเต็มเปี่ยม"
   }
 ];
 
