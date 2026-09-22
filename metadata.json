@@ -1,0 +1,8 @@
+{
+  "name": "Remix ThaiWander",
+  "description": "Planificateur de road trip nature exclusif dans les provinces de Kanchanaburi, Ratchaburi, Saraburi et Nakhon Nayok.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
