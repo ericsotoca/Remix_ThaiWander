@@ -15,6 +15,32 @@
 
 ---
 
+## 🌐 Accéder au site en ligne (GitHub Pages)
+
+Le site est hébergé directement et gratuitement sur **GitHub Pages**.
+
+### 🔗 Adresse de votre site :
+Votre site est accessible à l'adresse suivante (en remplaçant par votre nom d'utilisateur et nom de dépôt) :
+```
+https://<VOTRE_PSEUDO_GITHUB>.github.io/<NOM_DU_DEPOT>/
+```
+*(Par exemple : `https://ericsotoca.github.io/thaiwander/`)*
+
+---
+
+### ⚠️ Comment activer GitHub Pages sur votre dépôt (Étape essentielle !) :
+Par défaut, GitHub désactive le déploiement automatique sur les nouveaux dépôts. Suivez ces 3 étapes simples pour l'activer :
+
+1. Sur votre page de dépôt GitHub, cliquez sur l'onglet **Settings** (Paramètres, en haut à droite).
+2. Dans le menu de gauche, cliquez sur **Pages** (dans la section *Code and automation*).
+3. Dans la section **Build and deployment** > **Source** :
+   - Choisissez **`GitHub Actions`** (au lieu de *"Deploy from a branch"*).
+4. Rendez-vous ensuite dans l'onglet **Actions** de votre dépôt :
+   - Le workflow *Deploy to GitHub Pages* se lance automatiquement.
+   - Dès qu'il a terminé (coche verte ✅), l'URL officielle de votre site s'affiche en haut de l'écran dans **Settings > Pages** !
+
+---
+
 ## 🚀 Comment l'utiliser localement depuis GitHub
 
 Suivez ces étapes simples pour faire fonctionner le projet sur votre machine.
