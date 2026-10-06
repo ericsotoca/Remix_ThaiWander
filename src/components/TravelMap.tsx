@@ -99,51 +99,70 @@ export default function TravelMap({
     return item;
   };
 
-  // Initialize the map once
+  // Initialize the map once with resilience for StrictMode and re-mounting
   useEffect(() => {
-    if (mapContainerRef.current && !mapRef.current) {
-      // Thailand Center focus with zoom constraints and boundary restrictions
-      const bounds = L.latLngBounds([5.0, 97.0], [21.5, 106.0]);
-      mapRef.current = L.map(mapContainerRef.current, {
-        zoomControl: false,
-        attributionControl: false,
-        minZoom: 5,
-        maxZoom: 18,
-        maxBounds: bounds,
-        maxBoundsViscosity: 1.0
-      }).setView([13.7563, 100.5018], 6);
+    if (!mapContainerRef.current) return;
 
-      // Add elegant standard OpenStreetMap layer
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(mapRef.current);
+    // Clean up any stale leaflet instance attached to the DOM element
+    if ((mapContainerRef.current as any)._leaflet_id && !mapRef.current) {
+      delete (mapContainerRef.current as any)._leaflet_id;
+    }
 
-      // Custom zoom control placement (bottom-right)
-      L.control.zoom({
-        position: 'bottomright'
-      }).addTo(mapRef.current);
+    if (!mapRef.current) {
+      try {
+        // Thailand Center focus with zoom constraints and boundary restrictions
+        const bounds = L.latLngBounds([5.0, 97.0], [21.5, 106.0]);
+        const map = L.map(mapContainerRef.current, {
+          zoomControl: false,
+          attributionControl: false,
+          minZoom: 5,
+          maxZoom: 18,
+          maxBounds: bounds,
+          maxBoundsViscosity: 1.0
+        }).setView([13.7563, 100.5018], 6);
 
-      // Add minimal attribution
-      L.control.attribution({
-        position: 'bottomleft',
-        prefix: 'ThaiWander'
-      }).addTo(mapRef.current);
+        // Add elegant standard OpenStreetMap layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 18,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-      // Ensure Leaflet calculates sizes properly after DOM mount
-      setTimeout(() => {
-        if (mapRef.current) {
-          mapRef.current.invalidateSize();
-          mapRef.current.setView([13.7563, 100.5018], 6);
-        }
-      }, 300);
+        // Custom zoom control placement (bottom-right)
+        L.control.zoom({
+          position: 'bottomright'
+        }).addTo(map);
+
+        // Add minimal attribution
+        L.control.attribution({
+          position: 'bottomleft',
+          prefix: 'ThaiWander'
+        }).addTo(map);
+
+        mapRef.current = map;
+
+        // Ensure Leaflet calculates sizes properly after DOM mount
+        setTimeout(() => {
+          if (mapRef.current) {
+            mapRef.current.invalidateSize();
+          }
+        }, 300);
+      } catch (err) {
+        console.warn("Leaflet map initialization skipped/caught:", err);
+      }
     }
 
     return () => {
-      // Cleanup map on unmount
+      // Cleanup map on unmount safely
       if (mapRef.current) {
-        mapRef.current.remove();
+        try {
+          mapRef.current.remove();
+        } catch (e) {
+          console.warn("Leaflet map removal error:", e);
+        }
         mapRef.current = null;
+      }
+      if (mapContainerRef.current && (mapContainerRef.current as any)._leaflet_id) {
+        delete (mapContainerRef.current as any)._leaflet_id;
       }
     };
   }, []);

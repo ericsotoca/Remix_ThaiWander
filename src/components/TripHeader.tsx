@@ -238,8 +238,8 @@ export default function TripHeader({
               </div>
               <p className="text-[10px] text-slate-500 font-medium leading-none">
                 {lang === 'fr' 
-                  ? "10 parcours × 3 durées possibles au choix" 
-                  : "มีเส้นทางให้เลือก 10 เส้นทาง × 3 ระยะเวลาตามสไตล์คุณ"}
+                  ? `${ROUTE_TEMPLATES.length} parcours × 3 durées possibles au choix` 
+                  : `มีเส้นทางให้เลือก ${ROUTE_TEMPLATES.length} เส้นทาง × 3 ระยะเวลาตามสไตล์คุณ`}
               </p>
             </div>
           </div>
@@ -271,10 +271,10 @@ export default function TripHeader({
                   type="button"
                   onClick={() => setIsTableOpen(true)}
                   className="text-[8px] sm:text-[9px] text-emerald-700 bg-emerald-50 hover:bg-emerald-100 font-extrabold px-1.5 py-0.5 rounded border border-emerald-200/50 flex items-center gap-1 cursor-pointer transition-colors shadow-sm"
-                  title={lang === 'fr' ? "Comparer les 30 itinéraires et budgets" : "เปรียบเทียบ 30 เส้นทางและงบประมาณ"}
+                  title={lang === 'fr' ? `Comparer les ${ROUTE_TEMPLATES.length * 3} itinéraires et budgets` : `เปรียบเทียบ ${ROUTE_TEMPLATES.length * 3} เส้นทางและงบประมาณ`}
                 >
                   <Sparkles className="w-2.5 h-2.5 text-emerald-600 animate-bounce" style={{ animationDuration: '3s' }} />
-                  <span>{lang === 'fr' ? "30 Comparatif" : "เปรียบเทียบ 30"}</span>
+                  <span>{lang === 'fr' ? `${ROUTE_TEMPLATES.length * 3} Comparatif` : `เปรียบเทียบ ${ROUTE_TEMPLATES.length * 3}`}</span>
                 </button>
               </div>
               <select

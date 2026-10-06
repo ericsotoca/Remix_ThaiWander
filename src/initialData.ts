@@ -22,7 +22,12 @@ export const PLACE_COORDINATES: Record<string, { lat: number; lng: number }> = {
   "Muak Lek Waterfall (Saraburi)": { lat: 14.6582, lng: 101.1969 },
   "Khun Dan Prakan Chon Dam (Nakhon Nayok)": { lat: 14.3128, lng: 101.3217 },
   "Sarika Waterfall (Nakhon Nayok)": { lat: 14.2989, lng: 101.2589 },
-  "Wang Takrai Park (Nakhon Nayok)": { lat: 14.3256, lng: 101.3012 }
+  "Wang Takrai Park (Nakhon Nayok)": { lat: 14.3256, lng: 101.3012 },
+  "Erawan Waterfalls (7 Tiers Trek & Doctor Fish)": { lat: 14.3750, lng: 99.1440 },
+  "Srinakarin Dam & Huay Mae Khamin": { lat: 14.4055, lng: 99.1245 },
+  "Phra That Cave (Erawan National Park)": { lat: 14.4125, lng: 99.0833 },
+  "Tham Krasae & Death Railway Wooden Viaduct": { lat: 14.1102, lng: 99.1558 },
+  "Hindad Natural Hot Springs & Elephant Haven": { lat: 14.6247, lng: 98.7297 }
 };
 
 export const DEFAULT_ITINERARY: ItineraryItem[] = [
@@ -34,7 +39,7 @@ export const DEFAULT_ITINERARY: ItineraryItem[] = [
     notes: "จุดเริ่มต้นเดินทาง - ที่พักโฮมสเตย์ฟรีและเช็คอุปกรณ์เตรียมตัว",
     lat: 13.5266,
     lng: 100.3161,
-    duration: "1 คืน",
+    duration: "3 คืน",
     budget: 0,
     imageUrl: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=600&q=80",
     detailedTips: "ที่พักฟรีเป็นกันเองในสมุทรสาคร แนะนำให้พกอุปกรณ์และจัดกระเป๋าเตรียมพร้อม และห้ามลืมซื้อแก๊สกระป๋องที่ Decathlon ก่อนออกเดินทาง",

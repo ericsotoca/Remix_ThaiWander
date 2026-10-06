@@ -2,83 +2,110 @@ import { useState, useEffect } from 'react';
 import { ItineraryItem, TripSettings } from './types';
 import { DEFAULT_ITINERARY, DEFAULT_TRIP_SETTINGS, PLACE_COORDINATES } from './initialData';
 import { generatePresetItinerary } from './presetsData';
+import { safeStorage } from './utils/storage';
 import TripHeader from './components/TripHeader';
 import ItineraryList from './components/ItineraryList';
 import TravelMap from './components/TravelMap';
 import PdfExportModal from './components/PdfExportModal';
-import { Compass, RefreshCw, FileDown, Layers, Sparkles, MessageSquare, Map, ListTodo, HelpCircle, ChevronLeft, ChevronRight, Globe } from 'lucide-react';
+import { Compass, RefreshCw, FileDown, Map, ListTodo, ChevronLeft, ChevronRight, Globe } from 'lucide-react';
 
 export default function App() {
-  // Global Language state ('fr' | 'th')
+  // Global Language state ('fr' | 'th') - Default to 'th' as requested
   const [lang, setLang] = useState<'fr' | 'th'>(() => {
-    const saved = localStorage.getItem('thaiwander_lang');
-    return (saved === 'th' || saved === 'fr') ? saved : 'th';
+    try {
+      const saved = safeStorage.getItem('thaiwander_lang');
+      return (saved === 'th' || saved === 'fr') ? saved : 'th';
+    } catch {
+      return 'th';
+    }
   });
 
-  // Itinerary and Trip Settings state, loaded from LocalStorage or default values
-  // Features auto-healing to merge missing fields like imageUrl/tips if the user had older localStorage state
+  // Itinerary and Trip Settings state, loaded safely from Storage or default values
   const [items, setItems] = useState<ItineraryItem[]>(() => {
-    const saved = localStorage.getItem('thaiwander_itinerary');
-    if (saved) {
-      try {
+    try {
+      const saved = safeStorage.getItem('thaiwander_itinerary');
+      if (saved) {
         const parsed: ItineraryItem[] = JSON.parse(saved);
-        return parsed.map(item => {
-          const defaultMatch = DEFAULT_ITINERARY.find(d => d.placeName === item.placeName);
-          if (defaultMatch) {
-            return {
-              ...defaultMatch, // get all premium properties
-              ...item, // override with user's specific edits
-              imageUrl: item.imageUrl || defaultMatch.imageUrl,
-              detailedTips: item.detailedTips || defaultMatch.detailedTips,
-              maxInfo: item.maxInfo || defaultMatch.maxInfo
-            };
-          }
-          return item;
-        });
-      } catch (e) {
-        return DEFAULT_ITINERARY;
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return parsed.map(item => {
+            const defaultMatch = DEFAULT_ITINERARY.find(d => d.placeName === item.placeName);
+            if (defaultMatch) {
+              return {
+                ...defaultMatch,
+                ...item,
+                imageUrl: item.imageUrl || defaultMatch.imageUrl,
+                detailedTips: item.detailedTips || defaultMatch.detailedTips,
+                maxInfo: item.maxInfo || defaultMatch.maxInfo
+              };
+            }
+            return item;
+          });
+        }
       }
+    } catch (e) {
+      console.warn("Storage recovery: fallback to DEFAULT_ITINERARY", e);
     }
     return DEFAULT_ITINERARY;
   });
 
   const [settings, setSettings] = useState<TripSettings>(() => {
-    const saved = localStorage.getItem('thaiwander_settings');
-    return saved ? JSON.parse(saved) : DEFAULT_TRIP_SETTINGS;
+    try {
+      const saved = safeStorage.getItem('thaiwander_settings');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed && typeof parsed === 'object') {
+          return parsed;
+        }
+      }
+    } catch (e) {
+      console.warn("Storage recovery: fallback to DEFAULT_TRIP_SETTINGS", e);
+    }
+    return DEFAULT_TRIP_SETTINGS;
   });
 
   const [selectedRouteId, setSelectedRouteId] = useState<string>(() => {
-    return localStorage.getItem('thaiwander_selected_route_id') || 'route-1';
+    try {
+      return safeStorage.getItem('thaiwander_selected_route_id') || 'route-1';
+    } catch {
+      return 'route-1';
+    }
   });
 
   const [selectedWeeks, setSelectedWeeks] = useState<2 | 4 | 6>(() => {
-    const saved = localStorage.getItem('thaiwander_selected_weeks');
-    return (saved === '2' || saved === '4' || saved === '6') ? (Number(saved) as 2 | 4 | 6) : 4;
+    try {
+      const saved = safeStorage.getItem('thaiwander_selected_weeks');
+      return (saved === '2' || saved === '4' || saved === '6') ? (Number(saved) as 2 | 4 | 6) : 4;
+    } catch {
+      return 4;
+    }
   });
 
   const handleSelectRoute = (routeId: string) => {
     setSelectedRouteId(routeId);
-    localStorage.setItem('thaiwander_selected_route_id', routeId);
+    safeStorage.setItem('thaiwander_selected_route_id', routeId);
     setSelectedItemId(null);
   };
 
   const handleSelectWeeks = (weeks: 2 | 4 | 6) => {
     setSelectedWeeks(weeks);
-    localStorage.setItem('thaiwander_selected_weeks', String(weeks));
+    safeStorage.setItem('thaiwander_selected_weeks', String(weeks));
     setSelectedItemId(null);
   };
 
   // Automatically regenerate dynamic route if language, selected route, or duration changes.
-  // This guarantees that changing the language translates everything instantly.
   useEffect(() => {
-    const preset = generatePresetItinerary(selectedRouteId, selectedWeeks, lang);
-    setItems(preset.items);
-    setSettings(prev => ({
-      ...prev,
-      title: preset.title,
-      description: preset.description,
-      startDate: prev.startDate || DEFAULT_TRIP_SETTINGS.startDate
-    }));
+    try {
+      const preset = generatePresetItinerary(selectedRouteId, selectedWeeks, lang);
+      setItems(preset.items);
+      setSettings(prev => ({
+        ...prev,
+        title: preset.title,
+        description: preset.description,
+        startDate: prev.startDate || DEFAULT_TRIP_SETTINGS.startDate
+      }));
+    } catch (e) {
+      console.error("Error generating preset itinerary:", e);
+    }
   }, [lang, selectedRouteId, selectedWeeks]);
 
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
@@ -90,17 +117,23 @@ export default function App() {
   // Mobile View Tabs state: 'list' | 'map'
   const [mobileTab, setMobileTab] = useState<'list' | 'map'>('list');
 
-  // Sync state with LocalStorage on update
+  // Sync state with safeStorage on update
   useEffect(() => {
-    localStorage.setItem('thaiwander_itinerary', JSON.stringify(items));
+    try {
+      safeStorage.setItem('thaiwander_itinerary', JSON.stringify(items));
+    } catch {}
   }, [items]);
 
   useEffect(() => {
-    localStorage.setItem('thaiwander_settings', JSON.stringify(settings));
+    try {
+      safeStorage.setItem('thaiwander_settings', JSON.stringify(settings));
+    } catch {}
   }, [settings]);
 
   useEffect(() => {
-    localStorage.setItem('thaiwander_lang', lang);
+    try {
+      safeStorage.setItem('thaiwander_lang', lang);
+    } catch {}
   }, [lang]);
 
   // Handle adding an itinerary item (with 100% client-side geocoding for static/GitHub hosting)

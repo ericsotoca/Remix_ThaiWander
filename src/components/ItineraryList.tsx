@@ -10,6 +10,7 @@ import {
 import { DEFAULT_ITINERARY } from '../initialData';
 import { THAI_TRANSLATIONS, UI_TRANSLATIONS } from '../translations';
 import { estimateRoadTripStats } from '../utils/distance';
+import { safeStorage } from '../utils/storage';
 
 interface ItineraryListProps {
   items: ItineraryItem[];
@@ -179,10 +180,10 @@ export default function ItineraryList({
   // Translate terms
   const t = UI_TRANSLATIONS[lang];
 
-  // Checklist State & LocalStorage persistence
+  // Checklist State & safeStorage persistence
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>(() => {
     try {
-      const saved = localStorage.getItem('thaiwander_checklist');
+      const saved = safeStorage.getItem('thaiwander_checklist');
       return saved ? JSON.parse(saved) : {};
     } catch {
       return {};
@@ -196,7 +197,7 @@ export default function ItineraryList({
   const toggleChecklistItem = (id: string) => {
     const updated = { ...checkedItems, [id]: !checkedItems[id] };
     setCheckedItems(updated);
-    localStorage.setItem('thaiwander_checklist', JSON.stringify(updated));
+    safeStorage.setItem('thaiwander_checklist', JSON.stringify(updated));
   };
 
   // Dynamic Weather & Altitude advisor calculations based on items in itinerary

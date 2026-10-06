@@ -1034,6 +1034,119 @@ export const ROUTE_TEMPLATES: RouteTemplate[] = [
         maxInfoTh: "จบทริปครอบครัวแสนอบอุ่นและปลอดภัย สะสมรอยยิ้มและเสียงหัวเราะของเด็กๆ ตลอดเส้นทาง"
       }
     ]
+  },
+  {
+    id: "route-11",
+    nameFr: "🏕️ Camp de Base Erawan : 5 Jours en Étoile (Kanchanaburi)",
+    nameTh: "🏕️ ปักหลักแคมป์เอราวัณ : นอนจุดเดียว & ตะลุย 5 กิจกรรมรอบทิศ",
+    descFr: "Dormez exclusivement au campement turquoise du Parc National d'Erawan comme point de chute unique, et rayonnez chaque jour pendant 5 jours sur les activités et merveilles de Kanchanaburi.",
+    descTh: "พักค้างแรมที่อุทยานแห่งชาติเอราวัณเพียงแห่งเดียวตลอดทริป แล้วออกเดินทางท่องเที่ยวแบบไปเช้า-เย็นกลับ 5 วันเต็มรอบสถานที่ไฮไลท์ของกาญจนบุรี",
+    steps: [
+      {
+        placeName: "123/99 Sarintara 1 Village, Samut Sakhon",
+        category: "Lodging",
+        notesFr: "Point de départ - Logement chez l'habitant gratuit (3 jours de préparation)",
+        notesTh: "จุดเริ่มต้นเดินทาง - ที่พักโฮมสเตย์ฟรี 3 วันแรกเพื่อเช็คอุปกรณ์และเตรียมตัว",
+        lat: 13.5266,
+        lng: 100.3161,
+        budgetPerNight: 0,
+        detailedTipsFr: "Profitez de ces 3 premiers jours chez l'habitant à Samut Sakhon pour tester vos réchauds, préparer vos sacs étanches et faire le plein de cartouches de gaz.",
+        detailedTipsTh: "ใช้เวลา 3 วันแรกที่สมุทรสาครในการตรวจเช็คอุปกรณ์เต็นท์ ถุงนอน และเตรียมเสบียงให้พร้อมก่อนออกเดินทาง",
+        maxInfoFr: "Point de départ stratégique et chaleureux avant de rejoindre le campement d'Erawan.",
+        maxInfoTh: "จุดรวมพลแสนอบอุ่นก่อนออกเดินทางสู่แคมป์ปิ้งเอราวัณ"
+      },
+      {
+        placeName: "Erawan National Park",
+        category: "Camping",
+        notesFr: "Point de chute unique pour dormir - Installation de votre campement au bord des eaux turquoise d'Erawan",
+        notesTh: "จุดพักค้างแรมหลักจุดเดียว - กางเต็นท์ปักหลักริมน้ำตกเอราวัณตลอดทริป",
+        lat: 14.3686,
+        lng: 99.1436,
+        budgetPerNight: 100,
+        detailedTipsFr: "Montez votre campement à l'ombre des grands arbres près du ruisseau. Ce bivouac est votre seul et unique hébergement : vous y dormez chaque nuit sans avoir à remballer votre tente !",
+        detailedTipsTh: "เลือกจุดกางเต็นท์บนลานหญ้าร่มรื่นริมลำธาร ปักหลักนอนที่นี่ทุกคืนโดยไม่ต้องเก็บเต็นท์ย้ายที่พัก มีห้องน้ำและร้านอาหารบริการสะดวกสบาย",
+        maxInfoFr: "Le joyau naturel de Kanchanaburi : eau turquoise, forêt tropicale et chant des oiseaux au réveil.",
+        maxInfoTh: "ศูนย์กลางการพักผ่อนท่ามกลางธรรมชาติอันบริสุทธิ์ของอุทยานแห่งชาติเอราวัณ"
+      },
+      {
+        placeName: "Erawan Waterfalls (7 Tiers Trek & Doctor Fish)",
+        category: "Activity",
+        notesFr: "Activité Jour 1 : Randonnée des 7 niveaux de cascades turquoise & baignade avec les poissons docteurs (Nuit au camp d'Erawan)",
+        notesTh: "กิจกรรมวันที่ 1: พิชิตน้ำตกเอราวัณ 7 ชั้นและสปาปลาธรรมชาติ (กลับมานอนแคมป์เอราวัณ)",
+        lat: 14.3750,
+        lng: 99.1440,
+        budgetPerNight: 0,
+        detailedTipsFr: "Démarrez tôt à 08h00 pour atteindre le niveau 7 (Phu Pha Erawan). Profitez de la baignade dans les piscines naturelles avant l'arrivée des visiteurs d'un jour.",
+        detailedTipsTh: "เริ่มออกเดินตั้งแต่ 08:00 น. เพื่อเดินขึ้นสู่ชั้น 7 ภูผาเอราวัณ อากาศยามเช้าเย็นสบายและคนไม่พลุกพล่าน",
+        maxInfoFr: "Sept paliers féeriques d'eau calcaire émeraude nichés dans une gorge tropicale luxuriante.",
+        maxInfoTh: "น้ำตกหินปูน 7 ชั้นระดับโลก มีแอ่งน้ำใสสีฟ้าอมเขียวดั่งสวรรค์และปลาพลวงหินคอยตอดผิวเบาๆ สไตล์ธรรมชาติบำบัด"
+      },
+      {
+        placeName: "Srinakarin Dam & Huay Mae Khamin",
+        category: "Attraction",
+        notesFr: "Activité Jour 2 : Balade en bateau sur le lac du Barrage Srinakarin & point de vue panoramique (Nuit au camp d'Erawan)",
+        notesTh: "กิจกรรมวันที่ 2: ล่องเรือชมทะเลสาบเขื่อนศรีนครินทร์และเที่ยวน้ำตกห้วยแม่ขมิ้น (กลับมานอนแคมป์เอราวัณ)",
+        lat: 14.4055,
+        lng: 99.1245,
+        budgetPerNight: 0,
+        detailedTipsFr: "À seulement 30 min de route d'Erawan. Louez un bateau local ou un kayak pour naviguer entre les îlots de cette mer intérieure émeraude.",
+        detailedTipsTh: "เดินทางขึ้นเหนือจากเอราวัณเพียง 30-40 นาที ชมความยิ่งใหญ่ของทะเลสาบเขื่อนและรับประทานอาหารปลาแม่น้ำสดๆ",
+        maxInfoFr: "Un immense lac de retenue entouré par des montagnes denses et préservées de toute urbanisation.",
+        maxInfoTh: "หนึ่งในทะเลสาบน้ำจืดที่สวยที่สุดของภาคตะวันตก โอบล้อมด้วยแนวเขาสูงชันและป่าดิบแล้งอันอุดมสมบูรณ์"
+      },
+      {
+        placeName: "Phra That Cave (Erawan National Park)",
+        category: "Activity",
+        notesFr: "Activité Jour 3 : Spéléologie à la grotte sacrée de Phra That & sentier des arbres géants (Nuit au camp d'Erawan)",
+        notesTh: "กิจกรรมวันที่ 3: สัมผัสความมหัศจรรย์ของถ้ำพระธาตุ เสาหินงอกหินย้อยโปร่งแสง (กลับมานอนแคมป์เอราวัณ)",
+        lat: 14.4125,
+        lng: 99.0833,
+        budgetPerNight: 0,
+        detailedTipsFr: "À 12 km de votre campement. Suivez les 600 marches aménagées jusqu'à la vaste caverne de 200m réputée pour ses stalactites musicales translucides.",
+        detailedTipsTh: "อยู่ห่างจากจุดกางเต็นท์เอราวัณ 12 กม. มีบันไดขึ้นถ้ำสะดวก ควรเตรียมรองเท้าผ้าใบและไฟฉายส่องสว่าง",
+        maxInfoFr: "Une cathédrale souterraine naturelle impressionnante baignée d'un souffle d'air frais perpétuel.",
+        maxInfoTh: "ถ้ำหินปูนขนาดใหญ่ที่มีเสาหินโปร่งแสงสะท้อนแสงไฟเป็นประกายดั่งพระธาตุ อากาศภายในถ้ำถ่ายเทสะดวกและเย็นสบาย"
+      },
+      {
+        placeName: "Tham Krasae & Death Railway Wooden Viaduct",
+        category: "Attraction",
+        notesFr: "Activité Jour 4 : Marche sur le viaduc ferroviaire en bois de Tham Krasae & kayak sur la rivière Kwai (Nuit au camp d'Erawan)",
+        notesTh: "กิจกรรมวันที่ 4: เดินบนรางรถไฟประวัติศาสตร์เลียบผาถ้ำกระแซ และพายคายัคล่องแม่น้ำแควน้อย (กลับมานอนแคมป์เอราวัณ)",
+        lat: 14.1102,
+        lng: 99.1558,
+        budgetPerNight: 0,
+        detailedTipsFr: "À 45 min au sud d'Erawan. Marchez sur les traverses en bois surplombant la rivière Kwai et visitez le sanctuaire bouddhiste abrité dans la falaise.",
+        detailedTipsTh: "ขับรถลงมาทางใต้ประมาณ 45 นาที เดินถ่ายรูปบนสะพานไม้เลียบหน้าผาและกราบพระพุทธรูปศักดิ์สิทธิ์ในถ้ำกระแซ",
+        maxInfoFr: "Le site le plus célèbre et vertigineux du chemin de fer de la mort de la Seconde Guerre mondiale.",
+        maxInfoTh: "อนุสรณ์สถานทางประวัติศาสตร์ระดับโลกสมัยสงครามโลกครั้งที่ 2 ทางรถไฟสร้างเลียบโค้งผาหินริมแม่น้ำแควน้อยอย่างน่าอัศจรรย์"
+      },
+      {
+        placeName: "Hindad Natural Hot Springs & Elephant Haven",
+        category: "Activity",
+        notesFr: "Activité Jour 5 : Bains aux sources chaudes naturelles de Hindad & rencontre bienveillante avec les éléphants (Dernière nuit au camp d'Erawan)",
+        notesTh: "กิจกรรมวันที่ 5: แช่น้ำแร่ร้อนธรรมชาติหินดาดผ่อนคลายกล้ามเนื้อ และให้อาหารช้าง (กลับมานอนแคมป์เอราวัณคืนสุดท้าย)",
+        lat: 14.6247,
+        lng: 98.7297,
+        budgetPerNight: 0,
+        detailedTipsFr: "Plongez dans les bassins thermaux minéraux chauds au milieu de la forêt, puis participez au bain des éléphants dans un sanctuaire respectueux.",
+        detailedTipsTh: "แช่น้ำร้อนสลับกับลงเล่นน้ำในธารน้ำเย็นติดกัน ช่วยฟื้นฟูความสดชื่นได้อย่างดีเยี่ยมหลังจากการเดินป่า",
+        maxInfoFr: "Une parenthèse bienfaisante et inoubliable pour clôturer vos 5 jours d'activités rayonnantes.",
+        maxInfoTh: "บ่อน้ำพุร้อนธรรมชาติที่ค้นพบโดยทหารญี่ปุ่นสมัยสงครามโลก แวดล้อมด้วยต้นไม้ใหญ่และลำธารธรรมชาติร่มรื่น"
+      },
+      {
+        placeName: "123/99 Sarintara 1 Village, Samut Sakhon",
+        category: "Lodging",
+        notesFr: "Retour de road trip - Débriefing et repos à Samut Sakhon",
+        notesTh: "เดินทางกลับสมุทรสาคร - พักผ่อนและสรุปความประทับใจของทริปแคมป์ปิ้งเอราวัณ",
+        lat: 13.5266,
+        lng: 100.3161,
+        budgetPerNight: 0,
+        detailedTipsFr: "Rangement du matériel de camping et tri des magnifiques photos prises autour d'Erawan.",
+        detailedTipsTh: "เก็บสัมภาระ ทำความสะอาดเต็นท์และอุปกรณ์แคมป์ปิ้งอย่างสบายใจ",
+        maxInfoFr: "Fin de cette superbe aventure rayonnant autour du Parc National d'Erawan.",
+        maxInfoTh: "สิ้นสุดทริปปักหลักแคมป์ปิ้งเอราวัณ 5 วันอย่างประทับใจ"
+      }
+    ]
   }
 ];
 
@@ -1112,11 +1225,16 @@ export function generatePresetItinerary(
   const totalDays = durationWeeks * 7;
   const rawSteps = template.steps;
 
-  // We initially select step indices based on target weeks
+  // We select step indices based on route type and target weeks
   const initialIndices: number[] = [0];
   const midCount = rawSteps.length - 2;
 
-  if (durationWeeks === 2) {
+  if (routeId === 'route-11') {
+    // For route-11 (Erawan Base Camp & 5 days radiating activities), preserve all steps in full!
+    for (let i = 1; i < rawSteps.length; i++) {
+      initialIndices.push(i);
+    }
+  } else if (durationWeeks === 2) {
     // Propose up to 3 intermediate indices
     if (midCount > 0) {
       const idx1 = 1;
@@ -1213,9 +1331,14 @@ export function generatePresetItinerary(
   for (let i = 0; i < stepCount; i++) {
     const step = finalSteps[i];
 
-    // Day calculation linearly distributed
+    // Day calculation
     let calculatedDay = 1;
-    if (i === 0) {
+    if (routeId === 'route-11') {
+      if (i === 0) calculatedDay = 1;
+      else if (i === 1) calculatedDay = 4;
+      else if (i >= 2 && i <= 6) calculatedDay = 3 + i; // Days 5, 6, 7, 8, 9 (the 5 radiating days!)
+      else calculatedDay = Math.max(10, totalDays);
+    } else if (i === 0) {
       calculatedDay = 1;
     } else if (i === stepCount - 1) {
       calculatedDay = totalDays;
@@ -1236,7 +1359,12 @@ export function generatePresetItinerary(
     const isEnd = i === stepCount - 1;
 
     let itemDuration = "";
-    if (isStart || isEnd) {
+    if (isStart) {
+      itemDuration = lang === 'fr' ? "3 nuits" : "3 คืน";
+    } else if (routeId === 'route-11' && step.placeName === "Erawan National Park") {
+      const erawanNights = Math.max(5, durationWeeks * 7 - 4);
+      itemDuration = lang === 'fr' ? `${erawanNights} nuits (Camp de base)` : `${erawanNights} คืน (จุดปักหลักพักแรม)`;
+    } else if (isEnd) {
       itemDuration = lang === 'fr' ? "1 nuit" : "1 คืน";
     } else {
       itemDuration = step.category === 'Attraction' || step.category === 'Activity' || step.category === 'Restaurant' 
@@ -1244,9 +1372,13 @@ export function generatePresetItinerary(
         : durString;
     }
 
-    const itemBudget = isStart || isEnd 
-      ? step.budgetPerNight 
-      : step.budgetPerNight * calculatedNights;
+    const itemBudget = isStart
+      ? step.budgetPerNight * 3
+      : (routeId === 'route-11' && step.placeName === "Erawan National Park")
+        ? step.budgetPerNight * Math.max(5, durationWeeks * 7 - 4)
+        : isEnd 
+          ? step.budgetPerNight 
+          : step.budgetPerNight * (step.category === 'Activity' || step.category === 'Attraction' ? 1 : calculatedNights);
 
     items.push({
       id: isStart ? `${routeId}-step-1` : isEnd ? `${routeId}-step-end` : `${routeId}-step-mid-${i}`,
